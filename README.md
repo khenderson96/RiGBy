@@ -1,5 +1,5 @@
 # RiGBy
-A customizable MQTT based lighting controller for addressable LED strips. 
+A customizable MQTT based lighting controller for addressable LED strips that supports multiple independent sections with respective modifiers. 
 
 Setup:
 1. Install and run MQTT broker
