@@ -1,5 +1,5 @@
 # RiGBy
-A customizable MQTT based lighting controller for addressable LED strips that supports multiple independent sections with respective modifiers. 
+A customizable lighting controller for addressable LED strips that supports multiple independent sections with respective modifiers. RiGBy is controlled by a custom dashboard via MQTT, where section brightness, animation speec, etc. may be modified. 
 
 Setup:
 1. Install and run MQTT broker
