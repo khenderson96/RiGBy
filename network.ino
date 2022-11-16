@@ -1,14 +1,11 @@
-#define MSG_BUFFER_SIZE  (50)
-char msg[MSG_BUFFER_SIZE];
-
 /*
  * 
  */
 void setupWifi() {
   delay(10);
-  p("\n\nConnecting to ");
-  p(SSID);
-  WiFi.begin(SSID, PASS);
+  Serial.print("\n\nConnecting to ");
+  Serial.print(ssid);
+  WiFi.begin(ssid, pass);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -62,7 +59,6 @@ void callback(char* topic, byte* payload, unsigned int length) {
     message[i] = (char)payload[i];
   }
   message[length] = '\0';
-  Serial.print("ASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
   printMessage(topic, message);
   String topicString = String(topic);
 

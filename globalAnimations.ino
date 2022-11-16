@@ -1,3 +1,6 @@
+// functions defined in this file rely on multiple sections,
+// so they are not included as Section class functions.
+
 void distribute(){
   int i = 0;
   int delta = 255/NUM_SECTIONS;
@@ -9,3 +12,5 @@ void distribute(){
   }
   sections[i-2].h = sum/(NUM_SECTIONS - 2);
 }
+
+// todo
