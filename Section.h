@@ -10,7 +10,6 @@ const int NUM_ACTIVE_PALETTES = 15;
 class Section {
 
   private:
-
     void fadeIn();                        //
     void fire2012wPal();                  //
     void drawTwinkles(byte twinkleSpeed, byte twinkleDensity, byte autoSelectBG, byte coolLikeIncandescent);
@@ -20,13 +19,39 @@ class Section {
     void pacifica_one_layer(CRGBPalette16& p, uint16_t cistart, uint16_t wavescale, byte bri, uint16_t ioff);
     void pacifica_add_whitecaps();
     void pacifica_deepen_colors();
-    void chooseNextColorPalette( CRGBPalette16& pal);
+    void chooseNextColorPalette(CRGBPalette16& pal);
     void SetupRandomPalette();
     void SetupTotallyRandomPalette();
 
   public:
-
-    CRGB *leds;
+    Section(struct CRGB &sL, byte *heat, byte first, byte last);
+    void runAnimation();                  //
+    String setAnimation(char* topic, byte message);   //
+    String setPalette(byte message);      //
+    void update_gHue();                   //
+    void fillSolid();                     //
+    void fillGradient();
+    void addGlitter(fract8 chanceOfGlitter, byte whiteSparkles);
+    void rainbow();                       //
+    void confetti();                      //
+    void noise();                         //
+    void BPM();                           //
+    void juggle();                        //
+    void sinelon();                       //
+    void rainbowBeat();                   //
+    void pride();                         //
+    void fire2012wPalLoop(byte FPS);      //
+    void noise8();                        //
+    void INoise8Pal();                    //
+    void rainbowMarch();                  //
+    void RGBflip();                       //
+    void colorWaves(CRGBPalette16 &palette); //
+    void fadeInLoop();                    //
+    void sparkles(byte duration, byte amount, byte spread);
+    void twinkleFox(byte secondsPerPalette, byte autoSelectBG, byte coolLikeIncandescent);
+    void pacifica();
+    
+    struct CRGB *leds;
 
     byte f;
     byte l;
@@ -76,31 +101,6 @@ class Section {
     TBlendType    currentBlending;
     boolean       rotatePalette = true;
 
-    Section(CRGB *L, byte *heat, byte first, byte last);
-    void runAnimation();                  //
-    String setAnimation(char* topic, byte message);   //
-    String setPalette(byte message);      //
-    void update_gHue();                   //
-    void fillSolid();                     //
-    void addGlitter(fract8 chanceOfGlitter, byte whiteSparkles);
-    void rainbow();                       //
-    void confetti();                      //
-    void noise();                         //
-    void BPM();                           //
-    void juggle();                        //
-    void sinelon();                       //
-    void rainbowBeat();                   //
-    void pride();                         //
-    void fire2012wPalLoop(byte FPS);      //
-    void noise8();                        //
-    void INoise8Pal();                    //
-    void rainbowMarch();                  //
-    void RGBflip();                       //
-    void colorWaves(CRGBPalette16 &palette); //
-    void fadeInLoop();                    //
-    void sparkles(byte duration, byte amount, byte spread);
-    void twinkleFox(byte secondsPerPalette, byte autoSelectBG, byte coolLikeIncandescent);
-    void pacifica();
 };
 
 #endif

@@ -3,12 +3,12 @@
 /*
  * 
  */
-Section::Section(CRGB *L, byte *heat, byte first, byte last) {
-  *this->leds = *L;
+Section::Section(CRGB &L, byte *heat, byte first, byte last) {
+  this->leds = &L;
   this->f = first;
   this->l = last;
   this->len = last-first;
-  *this->heat = *heat;
+//  *this->heat = *heat;
   this->dist = random16(1234);
   this->currentBlending = LINEARBLEND;
   this->currentPalette = RainbowColors_p;
@@ -180,7 +180,7 @@ String Section::setPalette(byte message){
 
 
 /* 
- * Advance to the next color palette in the list (above) 
+ * Advance to the next color palette in the list  
  */
 void Section::chooseNextColorPalette( CRGBPalette16& pal){
   const byte numberOfPalettes = 15;

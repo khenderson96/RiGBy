@@ -1,4 +1,4 @@
-const char* SSID = "";
-const char* PASS = "";
+const char* ssid = "";
+const char* pass = "";
 const char* mqtt_server = "";
-const short mqtt_port = 0;
+const short mqtt_port = ;
