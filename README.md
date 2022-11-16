@@ -14,4 +14,6 @@ Dashboard Notes:
 - Rainbow Multiplier refers to the spread of a rainbow over a section. Higher number relates to less spread, and therefore denser color cycles.
 - Decay modulates how long a pixel stays lit
 - Speed modulates the rate between events
+- Chance is used to calculate probability and density of effects (glitter, etc)
+
 
